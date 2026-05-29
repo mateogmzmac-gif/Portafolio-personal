@@ -4,606 +4,200 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portafolio Defensivo 2026 — Mateo Gómez Macías</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg:        #0a0c10;
-    --bg2:       #111318;
-    --bg3:       #181c24;
-    --border:    #1e2430;
-    --gold:      #c9a84c;
-    --gold2:     #e8c96a;
-    --blue:      #3b82f6;
-    --green:     #22c55e;
-    --red:       #ef4444;
-    --text:      #e2e8f0;
-    --muted:     #64748b;
-    --card-bg:   rgba(24,28,36,0.85);
-  }
+:root {
+  --navy:      #0d1f3c;
+  --navy2:     #132848;
+  --navy3:     #1a3560;
+  --accent:    #c9a84c;
+  --accent2:   #e8c96a;
+  --blue:      #2563eb;
+  --blue-lt:   #3b82f6;
+  --green:     #16a34a;
+  --red:       #dc2626;
+  --white:     #ffffff;
+  --off-white: #f8fafc;
+  --gray-100:  #f1f5f9;
+  --gray-200:  #e2e8f0;
+  --gray-400:  #94a3b8;
+  --gray-600:  #475569;
+  --gray-800:  #1e293b;
+  --text:      #1e293b;
+  --muted:     #64748b;
+  --border:    #cbd5e1;
+  --shadow:    0 4px 24px rgba(13,31,60,0.10);
+  --shadow-lg: 0 8px 40px rgba(13,31,60,0.15);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--off-white); color: var(--text); font-family: 'IBM Plex Sans', sans-serif; font-weight: 400; line-height: 1.7; overflow-x: hidden; }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--navy); padding: 0.9rem 2.5rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 12px rgba(0,0,0,0.18); }
+.nav-logo { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.65); text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: var(--accent); }
 
-  html { scroll-behavior: smooth; }
+/* HERO */
+.hero { background: var(--navy); min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 2.5rem 5rem; position: relative; overflow: hidden; }
+.hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.07) 1px, transparent 1px); background-size: 60px 60px; }
+.hero-glow { position: absolute; top: -20%; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(ellipse, rgba(201,168,76,0.12) 0%, transparent 65%); pointer-events: none; }
+.hero-disclaimer { position: relative; z-index: 1; font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-bottom: 2rem; border: 1px solid rgba(255,255,255,0.1); display: inline-block; padding: 0.4rem 0.8rem; }
+.hero-label { position: relative; z-index: 1; font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: 0.3em; color: var(--accent); text-transform: uppercase; margin-bottom: 1.2rem; }
+.hero-title { position: relative; z-index: 1; font-family: 'Playfair Display', serif; font-size: clamp(3rem, 7vw, 6.5rem); font-weight: 900; line-height: 1; color: #fff; margin-bottom: 1.5rem; }
+.hero-title em { color: var(--accent); font-style: normal; }
+.hero-subtitle { position: relative; z-index: 1; max-width: 580px; font-size: 1rem; color: rgba(255,255,255,0.6); margin-bottom: 3rem; line-height: 1.8; }
+.hero-meta { position: relative; z-index: 1; display: flex; gap: 3rem; flex-wrap: wrap; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+.hero-meta-item { display: flex; flex-direction: column; gap: 0.3rem; }
+.hero-meta-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; letter-spacing: 0.2em; color: rgba(255,255,255,0.4); text-transform: uppercase; }
+.hero-meta-value { font-family: 'IBM Plex Mono', monospace; font-size: 0.88rem; color: var(--accent); }
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 300;
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
+/* SECTIONS */
+section { padding: 5.5rem 2.5rem; }
+section:nth-child(even) { background: var(--gray-100); }
+section:nth-child(odd) { background: var(--white); }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; letter-spacing: 0.3em; color: var(--accent); text-transform: uppercase; margin-bottom: 0.6rem; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 700; color: var(--navy); line-height: 1.2; margin-bottom: 0.9rem; }
+.section-desc { max-width: 680px; color: var(--muted); font-size: 0.95rem; margin-bottom: 3rem; line-height: 1.85; }
+.divider { height: 1px; background: var(--border); }
 
-  /* ── NOISE TEXTURE ── */
-  body::before {
-    content: '';
-    position: fixed; inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none; z-index: 0;
-  }
+/* CARDS */
+.card { background: var(--white); border: 1px solid var(--border); border-radius: 2px; padding: 1.75rem; box-shadow: var(--shadow); transition: box-shadow 0.2s, transform 0.2s; }
+.card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+.card-navy { background: var(--navy); border-color: var(--navy2); color: #fff; }
+.card-navy .card-label { color: rgba(255,255,255,0.5); }
+.card-navy .card-value { color: var(--accent); }
+.card-navy .card-desc { color: rgba(255,255,255,0.6); }
+.card-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; margin-bottom: 0.6rem; }
+.card-value { font-family: 'Playfair Display', serif; font-size: 2.1rem; font-weight: 700; color: var(--navy); line-height: 1; margin-bottom: 0.5rem; }
+.card-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
 
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    padding: 1rem 2.5rem;
-    display: flex; justify-content: space-between; align-items: center;
-    background: rgba(10,12,16,0.9);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-  }
-  .nav-logo {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    color: var(--gold);
-    text-transform: uppercase;
-  }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    color: var(--muted);
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--gold); }
+/* GRIDS */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; }
+.grid-6 { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.25rem; }
 
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    display: flex; flex-direction: column; justify-content: flex-end;
-    padding: 0 2.5rem 6rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-grid {
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-  }
-  .hero-gradient {
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 70%);
-  }
-  .hero-disclaimer {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    color: var(--muted);
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-    padding: 0.4rem 0.8rem;
-    border: 1px solid var(--border);
-    display: inline-block;
-  }
-  .hero-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.3em;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
-  }
-  .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(3rem, 7vw, 7rem);
-    font-weight: 900;
-    line-height: 1;
-    color: var(--text);
-    margin-bottom: 2rem;
-  }
-  .hero-title span { color: var(--gold); }
-  .hero-subtitle {
-    max-width: 600px;
-    font-size: 1rem;
-    color: var(--muted);
-    margin-bottom: 3rem;
-    line-height: 1.8;
-  }
-  .hero-meta {
-    display: flex; gap: 3rem; flex-wrap: wrap;
-  }
-  .hero-meta-item { display: flex; flex-direction: column; gap: 0.25rem; }
-  .hero-meta-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
-    color: var(--muted);
-    text-transform: uppercase;
-  }
-  .hero-meta-value {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.9rem;
-    color: var(--gold);
-  }
+/* THESIS BLOCK */
+.thesis { background: var(--navy); color: #fff; padding: 2rem 2.5rem; border-left: 4px solid var(--accent); margin-bottom: 1.75rem; border-radius: 2px; }
+.thesis h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--accent2); margin-bottom: 0.6rem; }
+.thesis p { font-size: 0.88rem; color: rgba(255,255,255,0.75); line-height: 1.8; }
 
-  /* ── SECTION ── */
-  section { padding: 6rem 2.5rem; position: relative; z-index: 1; }
-  .section-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.35em;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 0.75rem;
-  }
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    font-weight: 700;
-    line-height: 1.15;
-    color: var(--text);
-    margin-bottom: 1rem;
-  }
-  .section-desc {
-    max-width: 650px;
-    color: var(--muted);
-    font-size: 0.95rem;
-    margin-bottom: 3.5rem;
-    line-height: 1.8;
-  }
+/* CYCLE */
+.cycle-wrap { display: flex; overflow-x: auto; gap: 0; margin: 2.5rem 0; border: 1px solid var(--border); }
+.cycle-phase { flex: 1; min-width: 130px; padding: 1.5rem 1rem; text-align: center; border-right: 1px solid var(--border); background: var(--white); }
+.cycle-phase:last-child { border-right: none; }
+.cycle-phase.now { background: var(--navy); }
+.cycle-phase-badge { font-family: 'IBM Plex Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; background: var(--accent); color: var(--navy); padding: 0.2rem 0.5rem; display: inline-block; margin-bottom: 0.5rem; text-transform: uppercase; }
+.cycle-phase-name { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 500; }
+.cycle-phase.now .cycle-phase-name { color: var(--accent); }
+.cycle-phase-sectors { font-size: 0.75rem; color: var(--muted); line-height: 1.6; }
+.cycle-phase.now .cycle-phase-sectors { color: rgba(255,255,255,0.65); }
 
-  /* ── DIVIDER ── */
-  .divider {
-    width: 100%; height: 1px;
-    background: linear-gradient(90deg, transparent, var(--border), transparent);
-    margin: 0;
-  }
+/* FUNDAMENTAL TABLE */
+.fund-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.fund-table th { background: var(--navy); color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.85rem 1rem; text-align: left; }
+.fund-table td { padding: 0.9rem 1rem; border-bottom: 1px solid var(--border); color: var(--text); vertical-align: middle; }
+.fund-table tr:hover td { background: var(--gray-100); }
+.ticker-pill { display: inline-block; background: var(--navy); color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; padding: 0.25rem 0.65rem; letter-spacing: 0.1em; }
+.role-tag { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; padding: 0.2rem 0.5rem; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid; }
+.rt-anchor { border-color: var(--green); color: var(--green); }
+.rt-def { border-color: var(--blue); color: var(--blue); }
+.rt-buf { border-color: var(--accent); color: #92700c; }
+.rt-grow { border-color: #7c3aed; color: #7c3aed; }
 
-  /* ── MACRO STATS GRID ── */
-  .macro-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-  }
-  .macro-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    padding: 1.75rem;
-    position: relative;
-    overflow: hidden;
-    transition: border-color 0.3s;
-  }
-  .macro-card::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  .macro-card:hover { border-color: rgba(201,168,76,0.3); }
-  .macro-card:hover::before { opacity: 1; }
-  .macro-card-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    color: var(--muted);
-    text-transform: uppercase;
-    margin-bottom: 0.75rem;
-  }
-  .macro-card-value {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.25rem;
-    font-weight: 700;
-    color: var(--gold);
-    line-height: 1;
-    margin-bottom: 0.5rem;
-  }
-  .macro-card-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+/* WEIGHT BAR */
+.wbar-wrap { display: flex; align-items: center; gap: 0.6rem; }
+.wbar { height: 5px; background: var(--gray-200); flex: 1; max-width: 80px; }
+.wbar-fill { height: 100%; background: linear-gradient(90deg, var(--navy), var(--blue-lt)); }
 
-  /* ── THESIS BLOCK ── */
-  .thesis-block {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--gold);
-    padding: 2rem 2.5rem;
-    margin-bottom: 2rem;
-  }
-  .thesis-block h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.25rem;
-    color: var(--gold2);
-    margin-bottom: 0.75rem;
-  }
-  .thesis-block p { font-size: 0.9rem; color: var(--muted); line-height: 1.8; }
+/* METRICS GRID */
+.metrics-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 2rem; }
+.metric-box { background: var(--white); padding: 1.5rem 1.25rem; text-align: center; }
+.metric-box-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; margin-bottom: 0.4rem; }
+.metric-box-value { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; line-height: 1; }
+.metric-box-sub { font-size: 0.68rem; color: var(--muted); margin-top: 0.25rem; }
+.c-navy { color: var(--navy); }
+.c-green { color: var(--green); }
+.c-gold { color: #92700c; }
+.c-blue { color: var(--blue); }
+.c-red { color: var(--red); }
 
-  /* ── CYCLE DIAGRAM ── */
-  .cycle-diagram {
-    display: flex; align-items: center; gap: 0;
-    margin: 3rem 0;
-    overflow-x: auto;
-  }
-  .cycle-phase {
-    flex: 1; min-width: 140px;
-    padding: 1.5rem 1rem;
-    text-align: center;
-    border: 1px solid var(--border);
-    border-right: none;
-    position: relative;
-    transition: all 0.3s;
-  }
-  .cycle-phase:last-child { border-right: 1px solid var(--border); }
-  .cycle-phase.active {
-    background: rgba(201,168,76,0.08);
-    border-color: var(--gold);
-    border-right: 1px solid var(--gold);
-  }
-  .cycle-phase.active + .cycle-phase { border-left: none; }
-  .cycle-arrow {
-    position: absolute; right: -12px; top: 50%;
-    transform: translateY(-50%);
-    width: 0; height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 12px solid var(--border);
-    z-index: 2;
-  }
-  .cycle-phase.active .cycle-arrow { border-left-color: var(--gold); }
-  .cycle-phase-name {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    color: var(--muted);
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-  }
-  .cycle-phase.active .cycle-phase-name { color: var(--gold); }
-  .cycle-phase-sectors { font-size: 0.75rem; color: var(--muted); line-height: 1.5; }
-  .cycle-badge {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--bg);
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.1em;
-    padding: 0.2rem 0.5rem;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-  }
+/* DOWNSIDE BARS */
+.ds-wrap { background: var(--gray-100); border: 1px solid var(--border); padding: 2rem; margin-bottom: 2rem; }
+.ds-row { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1rem; }
+.ds-row:last-child { margin-bottom: 0; }
+.ds-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; color: var(--muted); min-width: 140px; }
+.ds-track { flex: 1; height: 32px; background: var(--gray-200); position: relative; max-width: 500px; }
+.ds-fill { position: absolute; left: 0; top: 0; bottom: 0; display: flex; align-items: center; padding-left: 0.75rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; font-weight: 500; white-space: nowrap; }
+.ds-spy { background: rgba(220,38,38,0.18); color: var(--red); width: 100%; }
+.ds-port { background: rgba(13,31,60,0.12); color: var(--navy); width: 35%; }
 
-  /* ── PORTFOLIO TABLE ── */
-  .port-table-wrap { overflow-x: auto; margin-bottom: 2rem; }
-  .port-table {
-    width: 100%; border-collapse: collapse;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.78rem;
-  }
-  .port-table th {
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
-    color: var(--gold);
-    text-transform: uppercase;
-    padding: 0.75rem 1rem;
-    text-align: left;
-    border-bottom: 1px solid var(--border);
-    background: var(--bg2);
-  }
-  .port-table td {
-    padding: 1rem 1rem;
-    border-bottom: 1px solid rgba(30,36,48,0.5);
-    vertical-align: middle;
-    color: var(--text);
-  }
-  .port-table tr:hover td { background: rgba(201,168,76,0.03); }
-  .ticker-badge {
-    display: inline-block;
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    padding: 0.25rem 0.6rem;
-    font-weight: 500;
-    color: var(--gold2);
-    letter-spacing: 0.1em;
-    font-size: 0.8rem;
-  }
-  .weight-bar-wrap {
-    display: flex; align-items: center; gap: 0.75rem;
-  }
-  .weight-bar {
-    height: 4px; background: var(--border); flex: 1; max-width: 100px;
-    position: relative;
-  }
-  .weight-bar-fill {
-    position: absolute; left: 0; top: 0; bottom: 0;
-    background: linear-gradient(90deg, var(--gold), var(--gold2));
-    transition: width 0.8s ease;
-  }
-  .role-tag {
-    display: inline-block;
-    padding: 0.2rem 0.5rem;
-    font-size: 0.6rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    border: 1px solid;
-  }
-  .role-anchor { border-color: var(--green); color: var(--green); }
-  .role-defensive { border-color: var(--blue); color: var(--blue); }
-  .role-buffer { border-color: var(--gold); color: var(--gold); }
-  .role-growth { border-color: #a78bfa; color: #a78bfa; }
+/* DUAL STRATEGY */
+.strat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem; }
+.strat-card { border: 2px solid var(--border); padding: 2rem; position: relative; background: var(--white); }
+.strat-card.now-active { border-color: var(--navy); }
+.strat-badge { position: absolute; top: 1rem; right: 1rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; padding: 0.25rem 0.6rem; text-transform: uppercase; }
+.sb-now { background: var(--navy); color: var(--accent); }
+.sb-next { background: var(--blue); color: #fff; }
+.strat-name { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 0.4rem; }
+.strat-when { font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; letter-spacing: 0.12em; color: var(--muted); text-transform: uppercase; margin-bottom: 1.25rem; }
+.strat-row { display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; padding: 0.55rem 0; border-bottom: 1px solid var(--gray-200); }
+.strat-row:last-child { border-bottom: none; }
+.strat-key { color: var(--muted); }
+.strat-val { font-weight: 500; color: var(--navy); }
 
-  /* ── METRICS GRID ── */
-  .metrics-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    margin-bottom: 3rem;
-  }
-  .metric-cell {
-    background: var(--bg2);
-    padding: 1.5rem;
-    text-align: center;
-  }
-  .metric-cell-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
-    color: var(--muted);
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-  }
-  .metric-cell-value {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-  }
-  .metric-cell-sub { font-size: 0.7rem; color: var(--muted); margin-top: 0.25rem; }
-  .positive { color: var(--green); }
-  .negative { color: var(--red); }
-  .gold { color: var(--gold); }
+/* SIGNALS */
+.signals-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin-bottom: 2.5rem; }
+.sig-card { background: var(--white); border: 1px solid var(--border); padding: 1.5rem; display: flex; gap: 1rem; }
+.sig-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: var(--gray-200); line-height: 1; min-width: 2.5rem; }
+.sig-body h4 { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; color: var(--navy); text-transform: uppercase; margin-bottom: 0.35rem; }
+.sig-body p { font-size: 0.78rem; color: var(--muted); }
 
-  /* ── DUAL STRATEGY ── */
-  .dual-strategy {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
-    margin-bottom: 3rem;
-  }
-  .strategy-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    padding: 2rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .strategy-card.active-now {
-    border-color: var(--gold);
-  }
-  .strategy-card.active-now::after {
-    content: 'ACTIVA AHORA';
-    position: absolute; top: 1rem; right: 1rem;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.55rem;
-    letter-spacing: 0.2em;
-    background: var(--gold);
-    color: var(--bg);
-    padding: 0.25rem 0.5rem;
-  }
-  .strategy-card.future::after {
-    content: 'PRÓXIMO CICLO';
-    position: absolute; top: 1rem; right: 1rem;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.55rem;
-    letter-spacing: 0.2em;
-    background: var(--blue);
-    color: white;
-    padding: 0.25rem 0.5rem;
-  }
-  .strategy-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-  }
-  .strategy-when {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    color: var(--muted);
-    text-transform: uppercase;
-    margin-bottom: 1.25rem;
-  }
-  .strategy-metrics { display: flex; flex-direction: column; gap: 0.6rem; }
-  .strategy-metric {
-    display: flex; justify-content: space-between; align-items: center;
-    font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem;
-    padding-bottom: 0.6rem;
-    border-bottom: 1px solid var(--border);
-  }
-  .strategy-metric:last-child { border-bottom: none; }
-  .strategy-metric-label { color: var(--muted); }
-  .strategy-metric-value { color: var(--gold2); }
+/* BIL BOX */
+.bil-box { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; background: var(--navy); color: #fff; padding: 2.5rem; margin-bottom: 2rem; }
+.bil-stat { margin-bottom: 1.5rem; }
+.bil-stat-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; letter-spacing: 0.18em; color: rgba(255,255,255,0.45); text-transform: uppercase; margin-bottom: 0.3rem; }
+.bil-stat-val { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--accent); }
+.bil-stat-sub { font-size: 0.72rem; color: rgba(255,255,255,0.55); }
+.bil-text p { font-size: 0.85rem; color: rgba(255,255,255,0.7); line-height: 1.85; margin-bottom: 1.25rem; }
 
-  /* ── PIVOT SIGNALS ── */
-  .signals-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem; margin-bottom: 3rem;
-  }
-  .signal-card {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    padding: 1.5rem;
-    display: flex; gap: 1rem; align-items: flex-start;
-  }
-  .signal-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 900;
-    color: rgba(201,168,76,0.2);
-    line-height: 1;
-    min-width: 2rem;
-  }
-  .signal-text h4 {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 0.4rem;
-  }
-  .signal-text p { font-size: 0.8rem; color: var(--muted); }
+/* EXTERNAL */
+.ext-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+.ext-card { background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--navy); padding: 1.75rem; }
+.ext-ticker { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--navy); margin-bottom: 0.2rem; }
+.ext-name { font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; color: var(--muted); letter-spacing: 0.1em; margin-bottom: 1.2rem; }
+.ext-text { font-size: 0.82rem; color: var(--muted); line-height: 1.75; }
+.ext-risk { margin-top: 1rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em; color: var(--red); text-transform: uppercase; }
 
-  /* ── BIL EXPLAINER ── */
-  .bil-explainer {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    padding: 2.5rem;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
-    margin-bottom: 2rem;
-  }
-  .bil-stat { margin-bottom: 1.5rem; }
-  .bil-stat-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
-    color: var(--muted);
-    text-transform: uppercase;
-    margin-bottom: 0.35rem;
-  }
-  .bil-stat-value {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--gold);
-  }
-  .bil-stat-sub { font-size: 0.75rem; color: var(--muted); }
+/* CONCLUSION TABLE */
+.conc-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin-bottom: 2rem; }
+.conc-table th { background: var(--navy); color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.85rem 1rem; text-align: left; }
+.conc-table td { padding: 0.9rem 1rem; border-bottom: 1px solid var(--border); color: var(--text); }
+.conc-table tr:hover td { background: var(--gray-100); }
+.badge-now { background: var(--navy); color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; padding: 0.2rem 0.5rem; letter-spacing: 0.1em; }
+.badge-next { background: var(--blue); color: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; padding: 0.2rem 0.5rem; }
 
-  /* ── DOWNSIDE VISUAL ── */
-  .downside-visual {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    padding: 2.5rem;
-    margin-bottom: 2rem;
-  }
-  .downside-scenario {
-    display: flex; align-items: center; gap: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-  .downside-scenario:last-child { margin-bottom: 0; }
-  .downside-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    min-width: 120px;
-  }
-  .downside-bar-track {
-    flex: 1; height: 28px;
-    background: var(--bg3);
-    position: relative;
-  }
-  .downside-bar-fill {
-    position: absolute; left: 0; top: 0; bottom: 0;
-    display: flex; align-items: center; padding-left: 0.75rem;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    font-weight: 500;
-  }
-  .downside-bar-spy { background: rgba(239,68,68,0.3); color: var(--red); }
-  .downside-bar-port { background: rgba(201,168,76,0.2); color: var(--gold); }
+/* FOOTER */
+footer { background: var(--navy); padding: 3rem 2.5rem; display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; flex-wrap: wrap; }
+.footer-name { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--accent); margin-bottom: 0.4rem; }
+.footer-sub { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; color: rgba(255,255,255,0.45); line-height: 1.7; }
+.footer-disc { font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; color: rgba(255,255,255,0.35); max-width: 380px; text-align: right; line-height: 1.7; }
 
-  /* ── POSITIONS EXTERNAL ── */
-  .external-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem; margin-bottom: 2rem;
-  }
-  .external-card {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-top: 2px solid var(--muted);
-    padding: 1.75rem;
-  }
-  .external-card-ticker {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 0.25rem;
-  }
-  .external-card-name {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--muted);
-    letter-spacing: 0.1em;
-    margin-bottom: 1.25rem;
-  }
-  .external-thesis { font-size: 0.82rem; color: var(--muted); line-height: 1.7; }
-  .external-risk {
-    margin-top: 1rem;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    color: var(--red);
-    text-transform: uppercase;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    padding: 3rem 2.5rem;
-    border-top: 1px solid var(--border);
-    display: flex; justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 1.5rem;
-  }
-  .footer-left { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--muted); }
-  .footer-left strong { color: var(--gold); display: block; font-size: 0.85rem; margin-bottom: 0.25rem; }
-  .footer-disclaimer {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    max-width: 400px;
-    text-align: right;
-    line-height: 1.6;
-  }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
-    nav { padding: 1rem 1.25rem; }
-    .nav-links { display: none; }
-    section { padding: 4rem 1.25rem; }
-    .hero { padding: 0 1.25rem 5rem; }
-    .dual-strategy { grid-template-columns: 1fr; }
-    .bil-explainer { grid-template-columns: 1fr; }
-    footer { flex-direction: column; }
-    .footer-disclaimer { text-align: left; }
-  }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .hero-label, .hero-title, .hero-subtitle, .hero-meta {
-    animation: fadeUp 0.8s ease both;
-  }
-  .hero-label       { animation-delay: 0.1s; }
-  .hero-title       { animation-delay: 0.25s; }
-  .hero-subtitle    { animation-delay: 0.4s; }
-  .hero-meta        { animation-delay: 0.55s; }
+@media (max-width: 768px) {
+  nav { padding: 0.9rem 1.25rem; }
+  .nav-links { display: none; }
+  section { padding: 3.5rem 1.25rem; }
+  .hero { padding: 0 1.25rem 4rem; }
+  .hero-meta { gap: 1.5rem; }
+  .grid-2, .strat-grid, .bil-box { grid-template-columns: 1fr; }
+  .cycle-wrap { gap: 0; }
+  footer { flex-direction: column; }
+  .footer-disc { text-align: left; }
+}
 </style>
 </head>
 <body>
@@ -614,152 +208,114 @@
   <ul class="nav-links">
     <li><a href="#macro">Macro</a></li>
     <li><a href="#ciclo">Ciclo</a></li>
+    <li><a href="#fundamental">Fundamental</a></li>
     <li><a href="#portafolio">Portafolio</a></li>
     <li><a href="#metricas">Métricas</a></li>
     <li><a href="#estrategia">Estrategia</a></li>
     <li><a href="#externo">Externo</a></li>
+    <li><a href="#conclusion">Conclusión</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<div class="hero">
   <div class="hero-grid"></div>
-  <div class="hero-gradient"></div>
-  <div style="position:relative;z-index:1">
-    <div class="hero-disclaimer">⚠ Documento educativo — No constituye asesoría de inversión</div>
-    <div class="hero-label">Análisis de Portafolio · Mayo 2026</div>
-    <h1 class="hero-title">Portafolio<br><span>Defensivo</span><br>2026</h1>
-    <p class="hero-subtitle">
-      Rotación táctica hacia activos anticíclicos en expansión tardía del ciclo.
-      Estrategia de mínima varianza con horizonte 2–3 años, diseñada para
-      preservar capital mientras el mercado descuenta valuaciones extremas.
-    </p>
-    <div class="hero-meta">
-      <div class="hero-meta-item">
-        <span class="hero-meta-label">Autor</span>
-        <span class="hero-meta-value">Mateo Gómez Macías</span>
-      </div>
-      <div class="hero-meta-item">
-        <span class="hero-meta-label">Estrategia</span>
-        <span class="hero-meta-value">Mínima Varianza</span>
-      </div>
-      <div class="hero-meta-item">
-        <span class="hero-meta-label">Downside Capture</span>
-        <span class="hero-meta-value">35.0%</span>
-      </div>
-      <div class="hero-meta-item">
-        <span class="hero-meta-label">Beta</span>
-        <span class="hero-meta-value">0.45</span>
-      </div>
-      <div class="hero-meta-item">
-        <span class="hero-meta-label">Periodo Estimación</span>
-        <span class="hero-meta-value">2019 – 2026</span>
-      </div>
-    </div>
+  <div class="hero-glow"></div>
+  <div class="hero-disclaimer">⚠ Documento educativo — No constituye asesoría de inversión</div>
+  <div class="hero-label">Análisis de Portafolio Personal · Mayo 2026</div>
+  <h1 class="hero-title">Construcción de un<br>Portafolio de <em>Alta Convicción</em><br>en un Mercado Complejo</h1>
+  <p class="hero-subtitle">Un análisis top-down del ciclo económico, rotación táctica defensiva y selección de activos fundamentada para el entorno macroeconómico de 2026.</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><span class="hero-meta-label">Autor</span><span class="hero-meta-value">Mateo Gómez Macías</span></div>
+    <div class="hero-meta-item"><span class="hero-meta-label">Fecha</span><span class="hero-meta-value">Mayo 2026</span></div>
+    <div class="hero-meta-item"><span class="hero-meta-label">Estrategia Actual</span><span class="hero-meta-value">Mínima Varianza</span></div>
+    <div class="hero-meta-item"><span class="hero-meta-label">Sharpe Min Var</span><span class="hero-meta-value">0.66 vs 0.62 SPY</span></div>
+    <div class="hero-meta-item"><span class="hero-meta-label">Downside Capture</span><span class="hero-meta-value">35.0%</span></div>
+    <div class="hero-meta-item"><span class="hero-meta-label">Beta</span><span class="hero-meta-value">0.45</span></div>
   </div>
-</section>
-
-<div class="divider"></div>
+</div>
 
 <!-- MACRO -->
 <section id="macro">
+<div class="section-inner">
   <div class="section-label">01 — Contexto Macroeconómico</div>
-  <h2 class="section-title">El entorno en el<br>que operamos</h2>
-  <p class="section-desc">
-    Todo análisis de inversión comienza en el macro. El ciclo económico determina
-    qué sectores prosperan, qué activos se valoran y hacia dónde fluye el capital
-    institucional. En mayo 2026 el panorama combina señales que requieren posicionamiento
-    defensivo con convicción.
-  </p>
+  <h2 class="section-title">El entorno en el que vivimos y operamos</h2>
+  <p class="section-desc">Todo análisis de inversión comienza en el macro. El ciclo económico determina qué sectores prosperan, qué activos se valoran y hacia dónde fluye el capital institucional. En mayo de 2026 el panorama combina señales que requieren análisis cuidadoso y posicionamiento defensivo.</p>
 
-  <div class="macro-grid">
-    <div class="macro-card">
-      <div class="macro-card-label">Fed Funds Rate</div>
-      <div class="macro-card-value">3.75%</div>
-      <div class="macro-card-desc">Pausa prolongada. Mercado asigna 55.6% de probabilidad a hike adicional para diciembre 2026 según CME FedWatch.</div>
+  <div class="grid-4" style="margin-bottom:2.5rem">
+    <div class="card card-navy">
+      <div class="card-label">Fed Funds Rate</div>
+      <div class="card-value">3.75%</div>
+      <div class="card-desc">Pausa prolongada. Mercado anticipa posible hike a 4.00–4.25% para diciembre 2026 con 55.6% de probabilidad según CME FedWatch.</div>
     </div>
-    <div class="macro-card">
-      <div class="macro-card-label">CAPE S&P 500</div>
-      <div class="macro-card-value">41.6×</div>
-      <div class="macro-card-desc">Segundo nivel más alto en 140 años de historia. Solo superado por el pico de diciembre 1999 con 44.19×. Promedio histórico: 17.3×.</div>
+    <div class="card card-navy">
+      <div class="card-label">CAPE S&P 500</div>
+      <div class="card-value">41.6×</div>
+      <div class="card-desc">Segundo nivel más alto en 140 años de historia. Solo superado por diciembre 1999 (44.19×). Promedio histórico: 17.3×.</div>
     </div>
-    <div class="macro-card">
-      <div class="macro-card-label">Inflación CPI</div>
-      <div class="macro-card-value">↗</div>
-      <div class="macro-card-desc">Reaceleración desde Q4 2025. Aranceles Trump generan presión inflacionaria estructural en cadenas de suministro globales.</div>
+    <div class="card card-navy">
+      <div class="card-label">Inflación CPI</div>
+      <div class="card-value">↗</div>
+      <div class="card-desc">Reaceleración visible desde Q4 2025. Aranceles Trump generan presión inflacionaria estructural en cadenas de suministro globales.</div>
     </div>
-    <div class="macro-card">
-      <div class="macro-card-label">S&P 500</div>
-      <div class="macro-card-value">Máximos</div>
-      <div class="macro-card-desc">Rally del 30–80% en la mayoría de sectores en los últimos 12 meses. Valuaciones en zona de precaución extrema.</div>
+    <div class="card card-navy">
+      <div class="card-label">Desempleo</div>
+      <div class="card-value">4.3%</div>
+      <div class="card-desc">Por encima del mínimo de 3.4% en 2023. Mercado laboral enfriándose sin señal de recesión inminente — señal de ciclo tardío.</div>
     </div>
-    <div class="macro-card">
-      <div class="macro-card-label">Desempleo</div>
-      <div class="macro-card-value">4.3%</div>
-      <div class="macro-card-desc">Por encima del mínimo de 3.4% en 2023. Mercado laboral enfriándose gradualmente — señal de ciclo tardío.</div>
+    <div class="card card-navy">
+      <div class="card-label">S&P 500</div>
+      <div class="card-value">Máximos</div>
+      <div class="card-desc">Rally del 30–80% en mayoría de sectores en los últimos 12 meses. NVDA +58%, AAPL +55%, GOOGL +126%. Valuaciones extremas.</div>
     </div>
-    <div class="macro-card">
-      <div class="macro-card-label">México / Riesgo MXN</div>
-      <div class="macro-card-value">⚠</div>
-      <div class="macro-card-desc">Calificadoras recortaron perspectiva crediticia en 2025 por deterioro fiscal. Portafolio 100% en USD como protección soberana.</div>
+    <div class="card card-navy">
+      <div class="card-label">México / MXN</div>
+      <div class="card-value">⚠</div>
+      <div class="card-desc">Calificadoras recortaron perspectiva crediticia en 2025 por deterioro fiscal. Portafolio 100% en USD como cobertura soberana.</div>
     </div>
   </div>
 
-  <div class="thesis-block">
-    <h3>La tesis central</h3>
-    <p>
-      Estamos en expansión tardía del ciclo con valuaciones extremas. El CAPE en 41.6× implica que el mercado
-      está descontando un futuro perfecto — sin recesión, sin re-rating de múltiplos, sin desaceleración de earnings.
-      Históricamente, CAPE por encima de 35× ha precedido correcciones significativas con horizonte de 12–36 meses.
-      El mercado se adelanta 6–12 meses a la economía real — por eso nos posicionamos defensivos ahora,
-      antes de que la corrección sea visible en los datos macro duros.
-    </p>
+  <div class="thesis">
+    <h3>La tesis central — Por qué posicionarse defensivo ahora</h3>
+    <p>Estamos en expansión tardía del ciclo con valuaciones extremas. El CAPE en 41.6× implica que el mercado está descontando un futuro perfecto — sin recesión, sin re-rating de múltiplos, sin desaceleración de earnings. Históricamente, CAPE por encima de 35× ha precedido correcciones significativas con horizonte de 12–36 meses. El mercado se adelanta 6–12 meses a la economía real — por eso nos posicionamos defensivos ahora, antes de que la corrección sea visible en los datos macro.</p>
   </div>
 
-  <div class="thesis-block">
-    <h3>Por qué USD y no MXN</h3>
-    <p>
-      Con las principales agencias calificadoras habiendo recortado la perspectiva crediticia de México en 2025,
-      el deterioro fiscal del país y la incertidumbre institucional, mantener el portafolio denominado en
-      dólares americanos no es opcional — es la base de la estrategia. La depreciación estructural del peso
-      hace que cualquier ganancia en MXN sea parcialmente ilusoria en términos de poder adquisitivo real.
-    </p>
+  <div class="thesis">
+    <h3>Aranceles Trump — Inflación estructural, no transitoria</h3>
+    <p>Los aranceles del 145%+ sobre tecnología china y los aranceles generales crean una presión de costos que no desaparece con el tiempo — están embebidos en la cadena de suministro global. Esto mantiene a la Fed con sesgo hawkish más tiempo del que el mercado anticipaba, comprimiendo los múltiplos de valuación. Las empresas con cadenas globales de manufactura (especialmente tech) tienen el mayor riesgo de compresión de márgenes.</p>
   </div>
+
+  <div class="thesis">
+    <h3>Por qué 100% en dólares</h3>
+    <p>Con las principales agencias calificadoras recortando la perspectiva crediticia de México en 2025, el deterioro fiscal y la incertidumbre institucional, mantener el portafolio en USD no es opcional — es la base de la estrategia. La depreciación estructural del peso hace que cualquier ganancia en MXN sea parcialmente ilusoria en términos de poder adquisitivo real dolarizado.</p>
+  </div>
+</div>
 </section>
-
-<div class="divider"></div>
 
 <!-- CICLO -->
 <section id="ciclo">
+<div class="section-inner">
   <div class="section-label">02 — Fase del Ciclo Económico</div>
-  <h2 class="section-title">Expansión tardía<br>→ Contracción</h2>
-  <p class="section-desc">
-    El ciclo económico determina qué activos favorecemos. Estamos en expansión tardía —
-    la fase inmediatamente anterior a la contracción. Los activos defensivos y anticíclicos
-    son los que mejor se desempeñan en esta transición.
-  </p>
+  <h2 class="section-title">Expansión tardía → rotación defensiva</h2>
+  <p class="section-desc">El ciclo económico determina qué activos favorecemos. Estamos en expansión tardía — la fase inmediatamente anterior a la contracción. Los activos defensivos y anticíclicos son los que mejor se desempeñan en esta transición.</p>
 
-  <div class="cycle-diagram">
+  <div class="cycle-wrap">
     <div class="cycle-phase">
       <div class="cycle-phase-name">Recuperación</div>
-      <div class="cycle-phase-sectors">Financieros<br>Consumer Discretionary<br>Industriales</div>
-      <div class="cycle-arrow"></div>
+      <div class="cycle-phase-sectors">Financieros<br>Discretionary<br>Industriales</div>
     </div>
     <div class="cycle-phase">
       <div class="cycle-phase-name">Expansión</div>
-      <div class="cycle-phase-sectors">Tech<br>Materials<br>Energy</div>
-      <div class="cycle-arrow"></div>
+      <div class="cycle-phase-sectors">Tech · AI<br>Materiales<br>Energía</div>
     </div>
-    <div class="cycle-phase active">
-      <div class="cycle-badge">Estamos aquí</div>
+    <div class="cycle-phase now">
+      <div class="cycle-phase-badge">Estamos aquí</div>
       <div class="cycle-phase-name">Expansión Tardía</div>
-      <div class="cycle-phase-sectors">Consumer Staples<br>Healthcare<br>Utilities</div>
-      <div class="cycle-arrow"></div>
+      <div class="cycle-phase-sectors">Consumer Staples<br>Healthcare<br>Utilities · Cash</div>
     </div>
     <div class="cycle-phase">
       <div class="cycle-phase-name">Contracción</div>
-      <div class="cycle-phase-sectors">Bonos<br>Defensivos<br>T-Bills</div>
-      <div class="cycle-arrow"></div>
+      <div class="cycle-phase-sectors">Bonos cortos<br>Defensivos<br>T-Bills</div>
     </div>
     <div class="cycle-phase">
       <div class="cycle-phase-name">Recesión</div>
@@ -767,414 +323,323 @@
     </div>
   </div>
 
-  <div class="thesis-block">
-    <h3>El mercado se adelanta — por eso nos movemos hoy</h3>
-    <p>
-      El mercado descuenta el futuro con 6–12 meses de anticipación. Si la contracción llega en 12–18 meses,
-      el mercado comenzará a caer en los próximos 6–12 meses. Posicionarse defensivo cuando el ciclo ya está
-      en contracción es tarde — hay que hacerlo durante la expansión tardía, exactamente donde estamos hoy.
-      La estrategia dual Min Var → Max Sharpe aprovecha exactamente esta mecánica.
-    </p>
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-label">El mercado se adelanta</div>
+      <div class="card-value" style="font-size:1.4rem;color:var(--navy)">6–12 meses</div>
+      <div class="card-desc">El mercado descuenta el futuro con 6–12 meses de anticipación. Si la contracción llega en 12–18 meses, el mercado comienza a caer hoy.</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Target de corrección</div>
+      <div class="card-value" style="font-size:1.4rem;color:var(--red)">−15 a −25%</div>
+      <div class="card-desc">Con CAPE en 41.6× vs promedio 17.3×, una corrección que lleve el ratio a 28–32× es el escenario central. No es catastrofismo — es reversión a la media.</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Horizonte de la fase</div>
+      <div class="card-value" style="font-size:1.4rem;color:var(--navy)">2–3 años</div>
+      <div class="card-desc">Estrategia táctica de 2–3 años en modo defensivo, con pivot a Max Sharpe cuando se confirmen las señales de giro del ciclo.</div>
+    </div>
   </div>
+</div>
 </section>
 
-<div class="divider"></div>
+<!-- FUNDAMENTAL -->
+<section id="fundamental">
+<div class="section-inner">
+  <div class="section-label">03 — Análisis Fundamental</div>
+  <h2 class="section-title">Los activos del portafolio: números concretos</h2>
+  <p class="section-desc">Cada activo fue seleccionado después de revisar sus estados financieros, métricas de valuación y su comportamiento esperado en el ciclo bajista que anticipamos. Aquí el análisis de cada uno.</p>
+
+  <div class="thesis" style="margin-bottom:2.5rem">
+    <h3>BIL — SPDR 1-3 Month T-Bill ETF</h3>
+    <p>No es un activo de retorno — es liquidez inteligente dentro del portafolio. Invierte en letras del Tesoro de 1-3 meses, rinde ~4.3% anual, y tiene correlación ~0 con el mercado. Duración de 1-3 meses lo hace prácticamente inmune a subidas de tasas (a diferencia de TLT que cae cuando suben las tasas — exactamente nuestro escenario). Cuando llegue la corrección, este 25% es la pólvora seca para rotar a growth sin necesidad de aportar capital nuevo. TLT fue descartado porque en el escenario de inflación + tasas altas que anticipamos, TLT también cae. En 2022, SPY cayó 18% y TLT cayó 30%. BIL no tiene ese riesgo de duración.</p>
+  </div>
+
+  <div class="thesis" style="margin-bottom:2.5rem">
+    <h3>BRK-B — Berkshire Hathaway</h3>
+    <p>Warren Buffett maneja $330B+ en cash — la posición de caja más grande de su historia. Eso no es accidental: es la señal más clara de que el mercado está caro. BRK-B underperformó el rally de los últimos 2 años precisamente porque Buffett no encontró nada a buen precio. Cuando llegue la corrección, tiene capital ilimitado para comprar activos de calidad a descuento — exactamente lo que hace sus rendimientos a largo plazo. Beta histórico bajo, diversificación sectorial real (seguros, energía, ferrocarril, consumer). PER 14.21× — el más barato del portafolio.</p>
+  </div>
+
+  <div class="thesis" style="margin-bottom:2.5rem">
+    <h3>JNJ — Johnson &amp; Johnson</h3>
+    <p>Healthcare puro con 62 años consecutivos de dividendo creciente (Dividend King). Q1 2026: revenue $24.1B (+9.9% YoY), gross margin 66.3%, FCF esperado $21B para el año. Guidance levantado a $100.8B en revenue — primera vez que superan los $100B. DARZALEX creció 18% ($4B), TREMFYA en inmunología +64%. Beta ~0.55 — cuando el mercado cae 10%, JNJ cae ~5.5%. La gente no deja de tomar medicamentos en recesión. PER 26.69× razonable para la calidad del negocio. Subió +51.4% en 52 semanas con earnings que crecieron junto con el precio — calidad real, no especulación.</p>
+  </div>
+
+  <div class="thesis" style="margin-bottom:2.5rem">
+    <h3>MSFT — Microsoft</h3>
+    <p>El único activo de tech del portafolio principal, pero por una razón específica: Azure y SaaS generan ingresos recurrentes bajo contratos empresariales de largo plazo — las empresas no cancelan contratos cloud en recesión, al contrario, migran para reducir costos de infraestructura física. PER 25.43× — el más barato de Big Tech por mucho (NVDA 32.81×, GOOGL 29.76×, AAPL 37.80×). El modelo le asigna solo 5.8% en Min Var (activo de transición) y 25% en Max Sharpe (motor de crecimiento). Eso define exactamente cómo usarlo en la estrategia dual.</p>
+  </div>
+
+  <div class="thesis" style="margin-bottom:2.5rem">
+    <h3>WMT — Walmart</h3>
+    <p>Q1 FY2027: revenue +7.3% YoY, comp sales US +4.1%, eCommerce global +26%, gross margin 24.3%. Lo que hace a WMT verdaderamente anticíclico: 60% de revenue en groceries — la gente come en recesión. Advertising revenue +37% global y Membership +17% son negocios de 60-70% de margen que el mercado aún no ha valorado completamente. La caída de -11% en precio post-earnings fue por costos de combustible (+250 bps) que el guidance de Q2 espera revertir. PER 41.88× parece caro, pero el mix de negocio está cambiando hacia márgenes más altos estructuralmente. Walmart no vende solo leche — se está convirtiendo en un híbrido retail+media.</p>
+  </div>
+</div>
+</section>
 
 <!-- PORTAFOLIO -->
 <section id="portafolio">
-  <div class="section-label">03 — Composición del Portafolio</div>
-  <h2 class="section-title">Los 5 activos<br>y su función</h2>
-  <p class="section-desc">
-    Portafolio construido con Mínima Varianza sobre datos 2019–2026.
-    Sin bound inferior — el modelo asigna libremente. Cap máximo del 25%.
-    Benchmarked contra SPY. Rebalanceo anual.
-  </p>
+<div class="section-inner">
+  <div class="section-label">04 — Composición del Portafolio</div>
+  <h2 class="section-title">Los 5 activos y sus pesos optimizados</h2>
+  <p class="section-desc">Portafolio construido con Mínima Varianza sobre datos 2019–2026. Sin bound inferior — el modelo asigna libremente. Cap máximo del 25%. Periodo 2019–2026 captura COVID crash, subida de tasas 2022 y normalización.</p>
 
-  <div class="port-table-wrap">
-    <table class="port-table">
-      <thead>
-        <tr>
-          <th>Ticker</th>
-          <th>Empresa</th>
-          <th>Rol</th>
-          <th>Peso Min Var</th>
-          <th>Peso Max Sharpe</th>
-          <th>Capital ($2,500)</th>
-          <th>Acciones</th>
-          <th>Tesis defensiva</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="ticker-badge">BIL</span></td>
-          <td>SPDR 1-3 Month T-Bill</td>
-          <td><span class="role-tag role-buffer">Pólvora Seca</span></td>
-          <td>
-            <div class="weight-bar-wrap">
-              <span>25.0%</span>
-              <div class="weight-bar"><div class="weight-bar-fill" style="width:100%"></div></div>
-            </div>
-          </td>
-          <td>25.0%</td>
-          <td>$625</td>
-          <td>6 acc</td>
-          <td>Correlación ~0, rinde 4.3% anual, liquidez total. No cae en ningún escenario.</td>
-        </tr>
-        <tr>
-          <td><span class="ticker-badge">BRK-B</span></td>
-          <td>Berkshire Hathaway</td>
-          <td><span class="role-tag role-anchor">Ancla</span></td>
-          <td>
-            <div class="weight-bar-wrap">
-              <span>22.9%</span>
-              <div class="weight-bar"><div class="weight-bar-fill" style="width:91.5%"></div></div>
-            </div>
-          </td>
-          <td>5.9%</td>
-          <td>$571</td>
-          <td>1 acc</td>
-          <td>$330B+ en cash. Buffett compra activos baratos en correcciones. Beta bajo. Underperformed el rally.</td>
-        </tr>
-        <tr>
-          <td><span class="ticker-badge">JNJ</span></td>
-          <td>Johnson &amp; Johnson</td>
-          <td><span class="role-tag role-defensive">Defensivo</span></td>
-          <td>
-            <div class="weight-bar-wrap">
-              <span>25.0%</span>
-              <div class="weight-bar"><div class="weight-bar-fill" style="width:100%"></div></div>
-            </div>
-          </td>
-          <td>19.1%</td>
-          <td>$625</td>
-          <td>2 acc</td>
-          <td>62 años consecutivos de dividendo creciente. Healthcare puro, beta ~0.55. FCF $21B anual.</td>
-        </tr>
-        <tr>
-          <td><span class="ticker-badge">MSFT</span></td>
-          <td>Microsoft</td>
-          <td><span class="role-tag role-growth">Transición</span></td>
-          <td>
-            <div class="weight-bar-wrap">
-              <span>5.8%</span>
-              <div class="weight-bar"><div class="weight-bar-fill" style="width:23.3%"></div></div>
-            </div>
-          </td>
-          <td>25.0%</td>
-          <td>$146</td>
-          <td>0 acc*</td>
-          <td>Azure/SaaS = ingresos recurrentes defensivos. PER 25.4× — el más barato de Big Tech. Crece a Max Sharpe.</td>
-        </tr>
-        <tr>
-          <td><span class="ticker-badge">WMT</span></td>
-          <td>Walmart</td>
-          <td><span class="role-tag role-defensive">Defensivo</span></td>
-          <td>
-            <div class="weight-bar-wrap">
-              <span>21.3%</span>
-              <div class="weight-bar"><div class="weight-bar-fill" style="width:85.2%"></div></div>
-            </div>
-          </td>
-          <td>25.0%</td>
-          <td>$532</td>
-          <td>4 acc</td>
-          <td>60% groceries — la gente come en recesión. Advertising +37%, Membership +17%. Trade-down beneficiary.</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="fund-table" style="overflow-x:auto;margin-bottom:2.5rem">
+  <table class="fund-table">
+    <thead>
+      <tr>
+        <th>Ticker</th><th>Empresa</th><th>Rol</th>
+        <th>Min Var %</th><th>Max Sharpe %</th>
+        <th>Capital ($2,500)</th><th>Acciones</th>
+        <th>Tesis en este ciclo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="ticker-pill">BIL</span></td>
+        <td>SPDR 1-3M T-Bill</td>
+        <td><span class="role-tag rt-buf">Pólvora Seca</span></td>
+        <td><div class="wbar-wrap"><span>25.0%</span><div class="wbar"><div class="wbar-fill" style="width:100%"></div></div></div></td>
+        <td>25.0%</td><td>$625</td><td>6 acc</td>
+        <td>Correlación ~0, rinde 4.3%, no cae. Capital para rotar en el piso.</td>
+      </tr>
+      <tr>
+        <td><span class="ticker-pill">BRK-B</span></td>
+        <td>Berkshire Hathaway</td>
+        <td><span class="role-tag rt-anchor">Ancla</span></td>
+        <td><div class="wbar-wrap"><span>22.9%</span><div class="wbar"><div class="wbar-fill" style="width:91.6%"></div></div></div></td>
+        <td>5.9%</td><td>$571</td><td>1 acc</td>
+        <td>$330B+ cash, Buffett compra barato en correcciones. PER 14.21×.</td>
+      </tr>
+      <tr>
+        <td><span class="ticker-pill">JNJ</span></td>
+        <td>Johnson &amp; Johnson</td>
+        <td><span class="role-tag rt-def">Defensivo</span></td>
+        <td><div class="wbar-wrap"><span>25.0%</span><div class="wbar"><div class="wbar-fill" style="width:100%"></div></div></div></td>
+        <td>19.1%</td><td>$625</td><td>2 acc</td>
+        <td>62 años dividendo creciente. Beta ~0.55. FCF $21B. Healthcare puro.</td>
+      </tr>
+      <tr>
+        <td><span class="ticker-pill">MSFT</span></td>
+        <td>Microsoft</td>
+        <td><span class="role-tag rt-grow">Transición</span></td>
+        <td><div class="wbar-wrap"><span>5.8%</span><div class="wbar"><div class="wbar-fill" style="width:23.2%"></div></div></div></td>
+        <td>25.0%</td><td>$146</td><td>0*</td>
+        <td>Azure/SaaS recurrente. PER 25.4× más barato de Big Tech. Crece a Max Sharpe.</td>
+      </tr>
+      <tr>
+        <td><span class="ticker-pill">WMT</span></td>
+        <td>Walmart</td>
+        <td><span class="role-tag rt-def">Defensivo</span></td>
+        <td><div class="wbar-wrap"><span>21.3%</span><div class="wbar"><div class="wbar-fill" style="width:85.2%"></div></div></div></td>
+        <td>25.0%</td><td>$532</td><td>4 acc</td>
+        <td>60% groceries. Advertising +37%. Trade-down en recesión. Retail+Media.</td>
+      </tr>
+    </tbody>
+  </table>
   </div>
-  <p style="font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--muted)">
-    * MSFT a $412 requiere fracciones. En brokers que no permiten fracciones, acumular en cash hasta completar 1 acción o ajustar capital.
-    El capital sobrante por redondeo (~$100–150) queda como cash en el bróker.
-  </p>
-</section>
+  <p style="font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--muted);margin-bottom:2rem">* MSFT a $412.67 requiere fracciones de acción. El capital sobrante por redondeo (~$100–150) queda como cash en el bróker.</p>
 
-<div class="divider"></div>
+  <div class="thesis">
+    <h3>Por qué MA fue eliminada — lección de correlación</h3>
+    <p>Mastercard tiene excelentes fundamentales (ROE 193%, GPM 77%) pero el modelo la rechazó consistentemente con 0% de peso en Min Var. La razón: correlación 0.64 con BRK-B y 0.58 con MSFT — las más altas del universo. En un portafolio de solo 5-6 activos, un activo con alta correlación no reduce riesgo. No es mala empresa — es el activo incorrecto para este universo específico. En la fase Max Sharpe del próximo ciclo, MA puede reintegrarse con convicción.</p>
+  </div>
+</div>
+</section>
 
 <!-- MÉTRICAS -->
 <section id="metricas">
-  <div class="section-label">04 — Métricas de Desempeño</div>
-  <h2 class="section-title">Los números<br>que importan</h2>
-  <p class="section-desc">
-    Backtesting dinámico 2019–2026 con rebalanceo anual. Capital inicial $1M.
-    El periodo captura COVID crash (marzo 2020), subida de tasas (2022) y normalización.
-    El portafolio fue optimizado con datos hasta 2019 y la performance es out-of-sample.
-  </p>
+<div class="section-inner">
+  <div class="section-label">05 — Métricas de Desempeño</div>
+  <h2 class="section-title">Los números que respaldan la estrategia</h2>
+  <p class="section-desc">Backtesting dinámico 2019–2026 con rebalanceo anual sobre $1M de capital inicial. El periodo captura COVID crash (marzo 2020), subida de tasas 2022 y normalización. El benchmark es SPY.</p>
 
-  <div class="metrics-grid">
-    <div class="metric-cell">
-      <div class="metric-cell-label">Rend. Anual Min Var</div>
-      <div class="metric-cell-value gold">11.80%</div>
-      <div class="metric-cell-sub">vs 16.44% SPY</div>
-    </div>
-    <div class="metric-cell">
-      <div class="metric-cell-label">Volatilidad Anual</div>
-      <div class="metric-cell-value positive">12.22%</div>
-      <div class="metric-cell-sub">vs 20.45% SPY — 40% menos</div>
-    </div>
-    <div class="metric-cell">
-      <div class="metric-cell-label">Sharpe Ratio</div>
-      <div class="metric-cell-value gold">0.66</div>
-      <div class="metric-cell-sub">vs 0.62 SPY — mejor eficiencia</div>
-    </div>
-    <div class="metric-cell">
-      <div class="metric-cell-label">Sortino Ratio</div>
-      <div class="metric-cell-value gold">1.11</div>
-      <div class="metric-cell-sub">vs 0.97 SPY</div>
-    </div>
-    <div class="metric-cell">
-      <div class="metric-cell-label">Beta</div>
-      <div class="metric-cell-value positive">0.45</div>
-      <div class="metric-cell-sub">55% menos sensible al mercado</div>
-    </div>
-    <div class="metric-cell">
-      <div class="metric-cell-label">Alpha Jensen</div>
-      <div class="metric-cell-value positive">+2.17%</div>
-      <div class="metric-cell-sub">Genera valor sobre el benchmark</div>
-    </div>
-    <div class="metric-cell">
-      <div class="metric-cell-label">Upside Capture</div>
-      <div class="metric-cell-value gold">40.25%</div>
-      <div class="metric-cell-sub">Captura 40% del alza del SPY</div>
-    </div>
-    <div class="metric-cell">
-      <div class="metric-cell-label">Downside Capture</div>
-      <div class="metric-cell-value positive">35.0%</div>
-      <div class="metric-cell-sub">Solo captura 35% de las caídas</div>
-    </div>
-    <div class="metric-cell">
-      <div class="metric-cell-label">Capture Ratio</div>
-      <div class="metric-cell-value positive">1.14</div>
-      <div class="metric-cell-sub">Mejor que SPY (1.00) — protege más de lo que sacrifica</div>
-    </div>
+  <div class="metrics-strip">
+    <div class="metric-box"><div class="metric-box-label">Rend. Anual Min Var</div><div class="metric-box-value c-navy">11.80%</div><div class="metric-box-sub">vs 16.44% SPY</div></div>
+    <div class="metric-box"><div class="metric-box-label">Volatilidad Anual</div><div class="metric-box-value c-green">12.22%</div><div class="metric-box-sub">vs 20.45% SPY — 40% menos</div></div>
+    <div class="metric-box"><div class="metric-box-label">Sharpe Ratio</div><div class="metric-box-value c-gold">0.66</div><div class="metric-box-sub">vs 0.62 SPY — más eficiente</div></div>
+    <div class="metric-box"><div class="metric-box-label">Sortino Ratio</div><div class="metric-box-value c-gold">1.11</div><div class="metric-box-sub">vs 0.97 SPY</div></div>
+    <div class="metric-box"><div class="metric-box-label">Beta</div><div class="metric-box-value c-green">0.45</div><div class="metric-box-sub">55% menos exposición al mercado</div></div>
+    <div class="metric-box"><div class="metric-box-label">Alpha Jensen</div><div class="metric-box-value c-green">+2.17%</div><div class="metric-box-sub">Genera valor sobre benchmark</div></div>
+    <div class="metric-box"><div class="metric-box-label">Upside Capture</div><div class="metric-box-value c-navy">40.25%</div><div class="metric-box-sub">Captura 40% del alza del SPY</div></div>
+    <div class="metric-box"><div class="metric-box-label">Downside Capture</div><div class="metric-box-value c-green">35.0%</div><div class="metric-box-sub">Solo captura 35% de caídas</div></div>
+    <div class="metric-box"><div class="metric-box-label">Capture Ratio</div><div class="metric-box-value c-green">1.14</div><div class="metric-box-sub">Mejor que SPY (1.00)</div></div>
   </div>
 
-  <!-- DOWNSIDE VISUAL -->
-  <div class="downside-visual">
-    <div class="section-label" style="margin-bottom:1.5rem">Escenario de corrección del 15% del SPY</div>
-    <div class="downside-scenario">
-      <div class="downside-label">SPY (benchmark)</div>
-      <div class="downside-bar-track">
-        <div class="downside-bar-fill downside-bar-spy" style="width:100%">−15.0% → −$375</div>
-      </div>
+  <div class="ds-wrap">
+    <div class="section-label" style="margin-bottom:1.25rem;color:var(--navy)">Escenario de corrección del 15% del SPY (nuestro caso central)</div>
+    <div class="ds-row">
+      <div class="ds-label">SPY (benchmark)</div>
+      <div class="ds-track"><div class="ds-fill ds-spy">−15.0% → −$375 sobre $2,500</div></div>
     </div>
-    <div class="downside-scenario">
-      <div class="downside-label">Este portafolio</div>
-      <div class="downside-bar-track">
-        <div class="downside-bar-fill downside-bar-port" style="width:35%">−5.25% → −$131</div>
-      </div>
+    <div class="ds-row">
+      <div class="ds-label">Este portafolio</div>
+      <div class="ds-track"><div class="ds-fill ds-port">−5.25% → −$131</div></div>
     </div>
-    <p style="font-size:0.8rem;color:var(--muted);margin-top:1.5rem">
-      Diferencia preservada: <strong style="color:var(--gold)">$244</strong> disponibles para rotar a growth en el piso del mercado.
-      Mismo ratio aplicado a $100,000 → $9,750 adicionales para comprar barato.
-    </p>
+    <p style="font-size:0.82rem;color:var(--muted);margin-top:1.25rem">Capital preservado en la corrección: <strong style="color:var(--navy)">$244</strong> disponibles para rotar a growth. Mismo ratio en $100,000 → <strong style="color:var(--navy)">$9,750</strong> adicionales para comprar activos baratos en el piso.</p>
   </div>
+
+  <div class="thesis">
+    <h3>Entendiendo el trade-off: rendimiento sacrificado vs protección ganada</h3>
+    <p>Min Var genera 11.80% vs 16.44% del SPY — una diferencia de ~4.6% anual. Ese es el costo del seguro. Pero en un año de corrección del 30% del SPY, el portafolio cae solo ~10.5%. Esa asimetría (4.6% sacrificado en años buenos vs 19.5% protegido en años malos) es exactamente el objetivo de la estrategia. Con horizonte de 50 años, los años malos destruyen más valor compuesto que los años buenos crean si no estás protegido. La matemática del interés compuesto favorece a quien no pierde capital, no a quien más gana en bull markets.</p>
+  </div>
+</div>
 </section>
 
-<div class="divider"></div>
-
-<!-- ESTRATEGIA DUAL -->
+<!-- ESTRATEGIA -->
 <section id="estrategia">
-  <div class="section-label">05 — Estrategia Dual</div>
-  <h2 class="section-title">Min Var ahora,<br>Max Sharpe después</h2>
-  <p class="section-desc">
-    La estrategia no es estática. Rotamos entre dos modos según el ciclo.
-    Min Var protege capital en la contracción. Max Sharpe maximiza el retorno
-    cuando el mercado se recupera. BIL dentro del portafolio es la pólvora seca
-    para ejecutar esa rotación.
-  </p>
+<div class="section-inner">
+  <div class="section-label">06 — Estrategia Dual de Ciclo</div>
+  <h2 class="section-title">Min Var ahora, Max Sharpe después</h2>
+  <p class="section-desc">La estrategia no es estática. Rotamos entre dos modos según el ciclo. BIL dentro del portafolio es la pólvora seca para ejecutar esa rotación sin necesidad de capital externo.</p>
 
-  <div class="dual-strategy">
-    <div class="strategy-card active-now">
-      <div class="strategy-name gold">Mínima Varianza</div>
-      <div class="strategy-when">Ahora → Cuando veamos señales de pivot</div>
-      <div class="strategy-metrics">
-        <div class="strategy-metric">
-          <span class="strategy-metric-label">Objetivo</span>
-          <span class="strategy-metric-value">Preservar capital</span>
-        </div>
-        <div class="strategy-metric">
-          <span class="strategy-metric-label">Beta</span>
-          <span class="strategy-metric-value">0.45</span>
-        </div>
-        <div class="strategy-metric">
-          <span class="strategy-metric-label">Downside Capture</span>
-          <span class="strategy-metric-value">35.0%</span>
-        </div>
-        <div class="strategy-metric">
-          <span class="strategy-metric-label">Sharpe</span>
-          <span class="strategy-metric-value">0.66</span>
-        </div>
-        <div class="strategy-metric">
-          <span class="strategy-metric-label">Capital Final (BT)</span>
-          <span class="strategy-metric-value">$2.00M de $1M</span>
-        </div>
-      </div>
+  <div class="strat-grid">
+    <div class="strat-card now-active">
+      <div class="strat-badge sb-now">Activa ahora</div>
+      <div class="strat-name" style="color:var(--navy)">Mínima Varianza</div>
+      <div class="strat-when">Expansión tardía → contracción</div>
+      <div class="strat-row"><span class="strat-key">Objetivo</span><span class="strat-val">Preservar capital</span></div>
+      <div class="strat-row"><span class="strat-key">Beta</span><span class="strat-val">0.45</span></div>
+      <div class="strat-row"><span class="strat-key">Downside Capture</span><span class="strat-val" style="color:var(--green)">35.0%</span></div>
+      <div class="strat-row"><span class="strat-key">Sharpe</span><span class="strat-val">0.66</span></div>
+      <div class="strat-row"><span class="strat-key">Sortino</span><span class="strat-val">1.11</span></div>
+      <div class="strat-row"><span class="strat-key">Capital final (BT)</span><span class="strat-val">$2.00M de $1M</span></div>
     </div>
-
-    <div class="strategy-card future">
-      <div class="strategy-name" style="color:var(--blue)">Máximo Sharpe</div>
-      <div class="strategy-when">Cuando se confirme el pivot del ciclo</div>
-      <div class="strategy-metrics">
-        <div class="strategy-metric">
-          <span class="strategy-metric-label">Objetivo</span>
-          <span class="strategy-metric-value">Maximizar rendimiento</span>
-        </div>
-        <div class="strategy-metric">
-          <span class="strategy-metric-label">Beta</span>
-          <span class="strategy-metric-value">0.62</span>
-        </div>
-        <div class="strategy-metric">
-          <span class="strategy-metric-label">Sharpe</span>
-          <span class="strategy-metric-value">0.80</span>
-        </div>
-        <div class="strategy-metric">
-          <span class="strategy-metric-label">Sortino</span>
-          <span class="strategy-metric-value">1.37</span>
-        </div>
-        <div class="strategy-metric">
-          <span class="strategy-metric-label">Capital Final (BT)</span>
-          <span class="strategy-metric-value">$2.33M de $1M</span>
-        </div>
-      </div>
+    <div class="strat-card">
+      <div class="strat-badge sb-next">Próximo ciclo</div>
+      <div class="strat-name" style="color:var(--blue)">Máximo Sharpe</div>
+      <div class="strat-when">Recuperación → expansión</div>
+      <div class="strat-row"><span class="strat-key">Objetivo</span><span class="strat-val">Maximizar rendimiento</span></div>
+      <div class="strat-row"><span class="strat-key">Beta</span><span class="strat-val">0.62</span></div>
+      <div class="strat-row"><span class="strat-key">Sharpe</span><span class="strat-val" style="color:var(--blue)">0.80</span></div>
+      <div class="strat-row"><span class="strat-key">Sortino</span><span class="strat-val" style="color:var(--blue)">1.37</span></div>
+      <div class="strat-row"><span class="strat-key">Rend. anual</span><span class="strat-val">14.84%</span></div>
+      <div class="strat-row"><span class="strat-key">Capital final (BT)</span><span class="strat-val">$2.33M de $1M</span></div>
     </div>
   </div>
 
-  <!-- PIVOT SIGNALS -->
-  <div class="section-label" style="margin-bottom:1.5rem">Señales que triggerean la rotación a Max Sharpe</div>
+  <div class="section-label" style="margin-bottom:1.25rem">Señales que triggerean la rotación a Max Sharpe</div>
   <div class="signals-grid">
-    <div class="signal-card">
-      <div class="signal-num">01</div>
-      <div class="signal-text">
-        <h4>Fed pivotea</h4>
-        <p>Primer recorte de tasas confirmado en FOMC. El mercado lo anticipa 3–6 meses antes — vigilar el dot plot.</p>
-      </div>
+    <div class="sig-card">
+      <div class="sig-num">01</div>
+      <div class="sig-body"><h4>Fed pivotea</h4><p>Primer recorte de tasas confirmado en FOMC. El mercado lo anticipa 3–6 meses antes — vigilar el dot plot y los minutes.</p></div>
     </div>
-    <div class="signal-card">
-      <div class="signal-num">02</div>
-      <div class="signal-text">
-        <h4>S&P cae 15–25%</h4>
-        <p>Corrección desde máximos que comprima valuaciones. CAPE bajando hacia 28–32× indica punto de entrada razonable.</p>
-      </div>
+    <div class="sig-card">
+      <div class="sig-num">02</div>
+      <div class="sig-body"><h4>S&P corrige 15–25%</h4><p>Corrección desde máximos que comprima valuaciones. CAPE bajando hacia 28–32× indica punto de entrada razonable.</p></div>
     </div>
-    <div class="signal-card">
-      <div class="signal-num">03</div>
-      <div class="signal-text">
-        <h4>Credit spreads se comprimen</h4>
-        <p>High yield spreads bajando de 500 bps indica que el mercado de crédito ve menor riesgo de recesión. Señal leading.</p>
-      </div>
+    <div class="sig-card">
+      <div class="sig-num">03</div>
+      <div class="sig-body"><h4>Credit spreads comprimen</h4><p>High yield spreads bajando de 500 bps indica que el mercado de crédito ve menor riesgo de recesión — señal leading fiable.</p></div>
     </div>
-    <div class="signal-card">
-      <div class="signal-num">04</div>
-      <div class="signal-text">
-        <h4>Earnings aceleran</h4>
-        <p>S&P 500 EPS growth superando 10% YoY dos trimestres consecutivos. Confirma que el ciclo está girando hacia expansión.</p>
-      </div>
+    <div class="sig-card">
+      <div class="sig-num">04</div>
+      <div class="sig-body"><h4>Earnings aceleran</h4><p>S&P 500 EPS growth superando 10% YoY dos trimestres consecutivos confirma que el ciclo está girando hacia expansión.</p></div>
     </div>
   </div>
 
-  <!-- BIL EXPLAINER -->
-  <div class="section-label" style="margin-bottom:1.5rem;margin-top:3rem">El rol de BIL — pólvora seca dentro del portafolio</div>
-  <div class="bil-explainer">
+  <div class="bil-box">
     <div>
-      <div class="bil-stat">
-        <div class="bil-stat-label">Correlación con el mercado</div>
-        <div class="bil-stat-value">~0.00</div>
-        <div class="bil-stat-sub">No se mueve con el SPY. Ni sube ni baja en crashes.</div>
-      </div>
-      <div class="bil-stat">
-        <div class="bil-stat-label">Rendimiento actual</div>
-        <div class="bil-stat-value">~4.3%</div>
-        <div class="bil-stat-sub">Anual sobre los $625 invertidos → ~$26.87/año mientras esperas</div>
-      </div>
-      <div class="bil-stat">
-        <div class="bil-stat-label">Duración</div>
-        <div class="bil-stat-value">1–3 meses</div>
-        <div class="bil-stat-sub">Prácticamente inmune a subidas de tasas. Si la Fed sube, BIL rinde MÁS.</div>
-      </div>
+      <div class="bil-stat"><div class="bil-stat-label">Correlación con mercado</div><div class="bil-stat-val">~0.00</div><div class="bil-stat-sub">No se mueve con el SPY en ningún escenario</div></div>
+      <div class="bil-stat"><div class="bil-stat-label">Rendimiento actual</div><div class="bil-stat-val">~4.3% anual</div><div class="bil-stat-sub">~$26.87/año sobre $625 invertidos mientras esperas</div></div>
+      <div class="bil-stat"><div class="bil-stat-label">Duración</div><div class="bil-stat-val">1–3 meses</div><div class="bil-stat-sub">Si Fed sube tasas, BIL rinde MÁS — no tiene riesgo de duración</div></div>
+      <div class="bil-stat"><div class="bil-stat-label">Pago</div><div class="bil-stat-val">Mensual</div><div class="bil-stat-sub">Distribuye el rendimiento como dividendo mensual</div></div>
     </div>
-    <div>
-      <p style="font-size:0.85rem;color:var(--muted);line-height:1.8;margin-bottom:1.5rem">
-        BIL no es un activo de retorno — es la liquidez inteligente dentro del portafolio.
-        Cuando llegue el momento de rotar a Max Sharpe y comprar tech barata, vendes BIL
-        sin pérdida de capital (a diferencia de TLT que habría caído con las tasas altas)
-        y usas ese 25% para ejecutar la rotación. Es el mecanismo que hace funcionar la estrategia dual.
-      </p>
-      <div class="thesis-block" style="padding:1.25rem 1.5rem">
-        <h3 style="font-size:0.9rem">Por qué NO TLT</h3>
-        <p>
-          TLT (bonos largos) cae cuando suben las tasas — exactamente el escenario que anticipamos
-          con inflación persistente. En 2022 el SPY cayó 18% y TLT cayó 30%. Para nuestra tesis
-          de tasas altas, TLT es el activo equivocado. BIL con duración de 1–3 meses no tiene
-          ese riesgo de duración.
-        </p>
-      </div>
+    <div class="bil-text">
+      <p>BIL no es un activo de retorno — es liquidez inteligente dentro del portafolio. El 25% en BIL hace tres cosas simultáneamente: ancora la volatilidad del portafolio (redujo el Downside Capture de 47.8% a 35.0%), genera ~4.3% mientras esperas la corrección, y se convierte en capital listo para rotar a growth cuando llegue el momento.</p>
+      <p>La alternativa obvia era TLT (bonos largos). El problema: TLT tiene duración de 16-20 años y cae cuando suben las tasas. En el escenario que anticipamos — inflación persistente + tasas altas — TLT también cae. En 2022, SPY cayó 18% y TLT cayó 30%. Ambos bajaron juntos. BIL con duración de 1-3 meses renueva constantemente a la tasa vigente, haciéndolo inmune a ese riesgo.</p>
     </div>
   </div>
+</div>
 </section>
 
-<div class="divider"></div>
-
-<!-- POSICIONES EXTERNAS -->
+<!-- EXTERNO -->
 <section id="externo">
-  <div class="section-label">06 — Posiciones Externas al Modelo</div>
-  <h2 class="section-title">Apuestas fuera<br>del portafolio principal</h2>
-  <p class="section-desc">
-    Estas posiciones no forman parte del portafolio optimizado. Son apuestas
-    independientes de alta convicción y alto riesgo, gestionadas con capital
-    separado y consciencia plena del riesgo binario.
-  </p>
+<div class="section-inner">
+  <div class="section-label">07 — Posiciones Externas al Modelo</div>
+  <h2 class="section-title">Apuestas de alta convicción fuera del portafolio principal</h2>
+  <p class="section-desc">Estas posiciones no forman parte del portafolio optimizado. Son apuestas independientes gestionadas con capital separado y consciencia plena del riesgo binario.</p>
 
-  <div class="external-grid">
-    <div class="external-card">
-      <div class="external-card-ticker">NUVL</div>
-      <div class="external-card-name">Nuvalent Inc. — Biotech Oncología</div>
-      <p class="external-thesis">
-        Apuesta a que la FDA aprueba su medicamento contra el cáncer de pulmón.
-        Cash runway de 5 años con cero revenue — la empresa puede mantenerse operando
-        independientemente del resultado de la aprobación. Es una apuesta asimétrica:
-        pérdida acotada (posición pequeña), upside potencialmente múltiple si la FDA aprueba.
-      </p>
-      <div class="external-risk">⚠ Riesgo binario — aprobación FDA no garantizada</div>
+  <div class="ext-grid">
+    <div class="ext-card">
+      <div class="ext-ticker">NUVL</div>
+      <div class="ext-name">Nuvalent Inc. — Biotech Oncología</div>
+      <p class="ext-text">Apuesta a la aprobación FDA de su medicamento contra el cáncer de pulmón. Cash runway de 5 años con cero revenue — la empresa puede mantenerse operando independientemente del resultado. Es una apuesta asimétrica: la posición es pequeña, la pérdida máxima está acotada, y el upside potencial en caso de aprobación es múltiple. No es anticíclica — está aislada del macro por ser binaria (aprobación sí/no).</p>
+      <div class="ext-risk">⚠ Riesgo binario — aprobación FDA no garantizada</div>
     </div>
-
-    <div class="external-card">
-      <div class="external-card-ticker">PYPL</div>
-      <div class="external-card-name">PayPal Holdings — Fintech Payments</div>
-      <p class="external-thesis">
-        Value play con P/E de 8.37× y P/S de 1.24× — la empresa procesa ~$2T en pagos anuales
-        valuada en $41B de market cap. El riesgo es de ejecución: nuevo CEO (Enrique Lores,
-        ex HP), reorganización en 3 divisiones, y branded checkout perdiendo terreno ante
-        Visa/Mastercard. Si ejecutan bien, el upside es significativo. Para la fase growth del ciclo.
-      </p>
-      <div class="external-risk">⚠ Riesgo de ejecución — CEO nuevo sin track record en pagos</div>
+    <div class="ext-card">
+      <div class="ext-ticker">PYPL</div>
+      <div class="ext-name">PayPal Holdings — Fintech Payments</div>
+      <p class="ext-text">Value play con P/E de 8.37× y P/S de 1.24×. Procesa ~$2T en pagos anuales valuada en $41B de market cap. El riesgo no es el negocio — es la ejecución: nuevo CEO (Enrique Lores, ex HP sin track record en payments), reorganización en 3 divisiones, y branded checkout perdiendo terreno ante Visa/Mastercard. Si ejecutan la turnaround, el upside es significativo. Posición para la fase growth del próximo ciclo, no para el defensivo actual.</p>
+      <div class="ext-risk">⚠ Riesgo de ejecución — CEO nuevo, reorganización en proceso</div>
     </div>
   </div>
 
-  <div class="thesis-block">
+  <div class="thesis">
     <h3>Regla de las posiciones externas</h3>
-    <p>
-      El capital en NUVL y PYPL es capital de riesgo puro — tratarlo como si pudiera llegar a cero.
-      Nunca aumentar estas posiciones por FOMO. Nunca usar capital del portafolio principal para
-      "promediar" si caen. Su función es proveer upside asimétrico que el portafolio principal,
-      por diseño, no puede dar.
-    </p>
+    <p>El capital en NUVL y PYPL es capital de riesgo puro — tratarlo como si pudiera llegar a cero. Nunca aumentar estas posiciones por FOMO. Nunca usar capital del portafolio principal para promediar si caen. Su función es única: proveer upside asimétrico que el portafolio principal, por diseño, no puede dar. Son especulación controlada — no apuestas impulsivas.</p>
   </div>
+</div>
 </section>
 
-<div class="divider"></div>
+<!-- CONCLUSION -->
+<section id="conclusion">
+<div class="section-inner">
+  <div class="section-label">08 — Conclusión y Decisiones</div>
+  <h2 class="section-title">El portafolio como sistema de decisión</h2>
+  <p class="section-desc">Un portafolio no es una lista de acciones — es un sistema de decisión con reglas claras. Aquí el resumen ejecutivo de cada elemento y su función en el sistema.</p>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-left">
-    <strong>Mateo Gómez Macías</strong>
-    Portafolio Personal · Mayo 2026<br>
-    Estrategia: Rotación Táctica de Ciclo
+  <table class="conc-table" style="margin-bottom:2.5rem">
+    <thead>
+      <tr>
+        <th>Activo</th><th>Peso Actual</th><th>Fase</th><th>Función</th><th>Reemplazar si...</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="ticker-pill">BIL</span></td><td>25.0%</td><td><span class="badge-now">Ahora</span></td><td>Pólvora seca, estabilizador, rendimiento libre de riesgo</td><td>Fed baja tasas → considerar rotar a bonos más largos</td></tr>
+      <tr><td><span class="ticker-pill">JNJ</span></td><td>25.0%</td><td><span class="badge-now">Ahora</span></td><td>Ancla defensiva healthcare, beta ~0.55, dividendo 62 años</td><td>Riesgo de litigios materiales o pérdida de patentes clave</td></tr>
+      <tr><td><span class="ticker-pill">BRK-B</span></td><td>22.9%</td><td><span class="badge-now">Ahora</span></td><td>Conglomerado, $330B cash, comprador en correcciones</td><td>Sucesión de Buffett con impacto negativo en asignación de capital</td></tr>
+      <tr><td><span class="ticker-pill">WMT</span></td><td>21.3%</td><td><span class="badge-now">Ahora</span></td><td>Consumer staples defensivo, trade-down, advertising growth</td><td>PER sube a 50×+ sin mejora de earnings — re-evaluar</td></tr>
+      <tr><td><span class="ticker-pill">MSFT</span></td><td>5.8%</td><td><span class="badge-next">Transición</span></td><td>Posición puente hacia Max Sharpe. Azure/SaaS defensivo</td><td>Mantenerse — crece a 25% cuando entremos a Max Sharpe</td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid-3" style="margin-bottom:2.5rem">
+    <div class="card">
+      <div class="card-label">Lo que logramos</div>
+      <div class="card-value" style="font-size:1.1rem;color:var(--navy)">Protección asimétrica</div>
+      <div class="card-desc">Downside Capture 35% con Capture Ratio 1.14. Sacrificamos 4.6% de rendimiento anual para ganar ~19.5% de protección en años de crash. La matemática del largo plazo favorece esta asimetría.</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Lo que no logramos (intencionalmente)</div>
+      <div class="card-value" style="font-size:1.1rem;color:var(--red)">Superar al SPY ahora</div>
+      <div class="card-desc">Si el mercado sigue subiendo, este portafolio underperforma. Eso no es un error — es el costo del seguro. Ganar cuando el mercado cae es más valioso que ganar más cuando sube.</div>
+    </div>
+    <div class="card">
+      <div class="card-label">El objetivo real</div>
+      <div class="card-value" style="font-size:1.1rem;color:var(--green)">Comprar barato en el piso</div>
+      <div class="card-desc">El 25% en BIL + capital preservado en la corrección = poder de compra cuando tech, growth y AI estén a 30–40% de descuento. Ese es el momento de rotar a Max Sharpe con convicción.</div>
+    </div>
   </div>
-  <div class="footer-disclaimer">
-    ⚠ Este documento es estrictamente educativo y no constituye asesoría
-    de inversión. El autor no es asesor financiero certificado. Las decisiones
-    de inversión son responsabilidad exclusiva del inversor.
+
+  <div class="thesis">
+    <h3>La lección de inversión más importante a los 21 años</h3>
+    <p>Con 50 años de horizonte, el tiempo es el único activo que no se puede comprar. El interés compuesto sobre capital preservado es exponencialmente más poderoso que recuperarse de pérdidas profundas. Una caída del 50% requiere un +100% solo para volver al punto de partida. La estrategia defensiva no es para ganar menos — es para nunca perder tanto que el compuesto se rompa. Saber cuándo no invertir en algo (T1 Energy, posiciones especulativas sin fundamentales) vale tanto como saber qué comprar.</p>
+  </div>
+</div>
+</section>
+
+<footer>
+  <div>
+    <div class="footer-name">Mateo Gómez Macías</div>
+    <div class="footer-sub">
+      Portafolio Personal · Análisis Mayo 2026<br>
+      Estrategia: Rotación Táctica de Ciclo<br>
+      Mínima Varianza → Máximo Sharpe
+    </div>
+  </div>
+  <div class="footer-disc">
+    ⚠ Este documento es estrictamente educativo y no constituye asesoría de inversión. El autor no es asesor financiero certificado. Las decisiones de inversión son responsabilidad exclusiva del inversor.
   </div>
 </footer>
 
